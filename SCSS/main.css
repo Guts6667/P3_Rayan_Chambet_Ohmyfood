@@ -1,0 +1,277 @@
+/*__Base*/
+@font-face {
+  font-family: "Shrikhand";
+  src: url(../polices/Shrikhand/Shrikhand-Regular.ttf);
+}
+
+@font-face {
+  font-family: "Roboto-Thin";
+  src: url(../polices/Roboto/Roboto-Thin.ttf);
+}
+
+@font-face {
+  font-family: "Roboto-Bold";
+  src: url("../polices/Roboto/Roboto-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../polices/Roboto/Roboto-Regular.ttf");
+}
+
+* {
+  font-family: 'Roboto-Thin', 'Arial', 'Helvetica', 'sans-serif';
+}
+
+body {
+  margin: 0;
+}
+
+h4, h5, h6 {
+  font-family: 'Roboto';
+}
+
+h2, h3 {
+  font-size: 1.5em;
+  font-family: 'Roboto-Bold';
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/*Components*/
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  justify-items: center;
+  padding: 40px;
+}
+
+.container__accueil {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  background-color: #F6F6F6;
+}
+
+.container__accueil p {
+  font-weight: bold;
+}
+
+.container__explore {
+  padding-bottom: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container__explications {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: start;
+      align-self: start;
+  margin-left: 100px;
+}
+
+.box {
+  background-color: #F6F6F6;
+  border: hidden;
+  border-radius: 12px;
+  -webkit-box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.2);
+  width: 85%;
+  margin: 10px 0 10px 0;
+}
+
+.box__position {
+  background-color: #e7e5e5;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 60px;
+}
+
+.box__explications {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.box__explications :only-child {
+  margin: 10px 5px 10px 5px;
+  padding: 10px;
+}
+
+.box__explications .chiffre {
+  background-color: #9356DC;
+  border: hidden;
+  border-radius: 18px;
+  width: 30px;
+  height: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  left: -10px;
+  color: white;
+}
+
+.box__explications h4 {
+  font-size: 1em;
+}
+
+.box__restaurants {
+  background-color: white;
+}
+
+.box__restaurants .box__picture {
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 200px;
+}
+
+.box__restaurants .pic1 {
+  background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+}
+
+.box__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 30px 0 30px;
+  /*Grossir balise <i> Voir avec Fabio*/
+}
+
+.box__content h4, .box__content p {
+  text-align: left;
+  font-size: 1.4em;
+}
+
+.box__content p {
+  font-size: 1.2em;
+}
+
+.btn {
+  color: white;
+  border: hidden;
+  border-radius: 25px;
+  -webkit-box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.5);
+  background: -webkit-gradient(linear, left top, right bottom, from(#FF79DA), to(#9356DC));
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  -webkit-transition: background-color opacity 1s ease-in-out;
+  transition: background-color opacity 1s ease-in-out;
+  padding: 20px 25px 20px 25px;
+  margin-top: 10px;
+  font-family: 'Roboto';
+}
+
+.btn:hover {
+  background: -webkit-gradient(linear, right bottom, left top, from(#FF79DA), to(rgba(158, 91, 155, 0.938)));
+  background: linear-gradient(to top left, #FF79DA, rgba(158, 91, 155, 0.938));
+}
+
+.btn:active {
+  background: -webkit-gradient(linear, right bottom, left top, from(#FF79DA), to(#462741));
+  background: linear-gradient(to top left, #FF79DA, #462741);
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-bottom: solid #dad8d8;
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  z-index: 1;
+}
+
+header img {
+  width: 250px;
+  margin: 10px;
+}
+
+.position {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.position p {
+  margin-left: 20px;
+  font-family: 'Roboto-Bold';
+}
+/*# sourceMappingURL=main.css.map */
