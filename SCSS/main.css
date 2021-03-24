@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*__Base*/
 @font-face {
   font-family: "Shrikhand";
@@ -41,6 +42,23 @@ a {
   color: black;
 }
 
+/*PICTURES*/
+.pic1 {
+  background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+}
+
+.pic2 {
+  background-image: url(../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+}
+
+.pic3 {
+  background-image: url(../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+}
+
+.pic4 {
+  background-image: url(../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+}
+
 /*Components*/
 .container {
   display: -webkit-box;
@@ -51,7 +69,9 @@ a {
       -ms-flex-direction: column;
           flex-direction: column;
   justify-items: center;
-  padding: 40px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .container__accueil {
@@ -65,9 +85,6 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   text-align: center;
   background-color: #F6F6F6;
 }
@@ -88,27 +105,18 @@ a {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
 }
 
-.container__explications {
+.container__restaurants {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.container .title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-item-align: start;
-      align-self: start;
-  margin-left: 100px;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .box {
@@ -140,6 +148,10 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.box__explications:hover {
+  background-color: rgba(147, 86, 220, 0.2);
 }
 
 .box__explications :only-child {
@@ -176,14 +188,12 @@ a {
 }
 
 .box__restaurants .box__picture {
+  overflow: hidden;
   background-position: center;
   background-size: cover;
   width: 100%;
   height: 200px;
-}
-
-.box__restaurants .pic1 {
-  background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+  border-radius: 12px 12px 0px 0;
 }
 
 .box__content {
@@ -201,6 +211,7 @@ a {
       -ms-flex-align: center;
           align-items: center;
   margin: 0 30px 0 30px;
+  line-height: 50%;
   /*Grossir balise <i> Voir avec Fabio*/
 }
 
@@ -210,7 +221,13 @@ a {
 }
 
 .box__content p {
+  font-family: Roboto;
   font-size: 1.2em;
+}
+
+.box__content i:active {
+  color: #9356DC;
+  fill: linear-gradient(to bottom right, #FF79DA, #9356DC);
 }
 
 .btn {
@@ -238,6 +255,40 @@ a {
   background: linear-gradient(to top left, #FF79DA, #462741);
 }
 
+.position {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.position p {
+  margin-left: 20px;
+  font-family: 'Roboto-Bold';
+}
+
+.title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-item-align: start;
+      align-self: start;
+  margin-left: 100px;
+}
+
+@media all and (max-width: 767px) {
+  .title {
+    margin-left: 50px;
+  }
+}
+
+/*Balises Sémantiques*/
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -257,7 +308,28 @@ header img {
   margin: 10px;
 }
 
-.position {
+footer {
+  background-color: #353535;
+  margin: 0;
+  padding-left: 40px;
+}
+
+footer h3 {
+  font-family: Shrikhand;
+  color: white;
+  font-size: 1.2em;
+}
+
+footer i, footer p {
+  color: white;
+  margin: 5px;
+}
+
+footer strong {
+  font-family: Roboto;
+}
+
+footer div :only-child {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -270,8 +342,22 @@ header img {
           align-items: center;
 }
 
-.position p {
-  margin-left: 20px;
-  font-family: 'Roboto-Bold';
+/* Media Queries */
+@media all and (min-width: 1024px) {
+  .container__restaurants {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    padding: 0 40px 0 40px;
+  }
+  .box__restaurants {
+    width: 40%;
+  }
 }
 /*# sourceMappingURL=main.css.map */

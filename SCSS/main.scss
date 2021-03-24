@@ -44,19 +44,31 @@ a{
     color: black
 }
 
+/*PICTURES*/
+.pic1{
+    background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+}
+.pic2{
+    background-image: url(../images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+}
+.pic3{
+    background-image: url(../images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+}
+.pic4{
+    background-image: url(../images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+}
 
 /*Components*/
 .container{
     display: flex;
     flex-direction: column;
     justify-items: center;
-    padding: 40px;
+    align-items: center;
 
         &__accueil{
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
             text-align: center;
             background-color: #F6F6F6;
             p{
@@ -68,16 +80,12 @@ a{
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
         }
-        &__explications{
+
+        &__restaurants{
             display: flex;
-            align-items: center;
-        }
-        .title{
-           display: flex;
-           align-self: start;
-           margin-left: 100px;
+            flex-flow: row wrap;
+            justify-content: space-around;
         }
         
 }
@@ -89,6 +97,7 @@ a{
     width: 85%;
     margin: 10px 0 10px 0;
     
+    
     &__position{
         background-color: #e7e5e5;
         width: 100%;
@@ -99,6 +108,9 @@ a{
     &__explications{
         display: flex;
         align-items: center;
+            &:hover{
+                background-color: rgba($primary-color, $alpha: .2);
+            }
         :only-child{
             margin: 10px 5px 10px 5px;
             padding: 10px;
@@ -122,16 +134,16 @@ a{
     }
     &__restaurants{
         background-color: white;
-        
+    
             .box__picture{
+                overflow: hidden;
                 background-position: center;
                 background-size: cover;
                 width: 100%;
                 height: 200px;
+                border-radius: 12px 12px 0px 0;
             }
-            .pic1{
-                background-image: url(../images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
-            }
+
     }
     &__content{
         display: flex;
@@ -139,12 +151,18 @@ a{
         justify-content: space-between;
         align-items: center;
         margin: 0 30px 0 30px;
+        line-height: 50%;
         h4, p{
             text-align: left;
             font-size: 1.4em;
         }
         p{
+            font-family: Roboto;
             font-size: 1.2em;
+        }
+        i:active{
+            color: $primary-color;
+            fill: $linear-gradient;
         }
        /*Grossir balise <i> Voir avec Fabio*/
        
@@ -172,7 +190,31 @@ a{
     }
 
 
-header{
+
+
+
+.position{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    p{
+        margin-left: 20px;
+        font-family: 'Roboto-Bold';
+    }
+}
+.title{
+    display: flex;
+    align-self: start;
+    margin-left: 100px;
+ }
+ @media all and (max-width: 767px){
+     .title{
+         margin-left: 50px;
+     }
+ }
+
+ /*Balises Sémantiques*/
+ header{
     display: flex;
     justify-content: center;
     border-bottom: solid rgba($color: #dad8d8, $alpha: 1.5);
@@ -185,16 +227,39 @@ header img{
     width: 250px;
     margin: 10px;
 }
-
-
-.position{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    p{
-        margin-left: 20px;
-        font-family: 'Roboto-Bold';
+footer{
+    background-color: #353535;
+    margin: 0;
+    padding-left: 40px;
+    h3{
+        font-family: Shrikhand;
+        color: white;
+        font-size: 1.2em;
+    }
+    i, p{
+        color: white;
+        margin: 5px;
+    }
+    strong{
+        font-family: Roboto;
+    }
+    div :only-child{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
 }
+/* Media Queries */
 
+@media all and (min-width:1024px){
 
+    .container__restaurants{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+        padding: 0 40px 0 40px;
+    }
+    .box__restaurants{
+        width: 40%;
+    }
+}
