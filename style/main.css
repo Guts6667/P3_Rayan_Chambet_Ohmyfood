@@ -412,17 +412,16 @@ footer div :only-child {
 
 @media all and (max-width: 1024px) {
   .anim h1 {
-    font-size: 3em;
+    font-size: 2.5em;
   }
 }
 
-.tracking-in-contract-bck {
-  -webkit-animation: tracking-in-contract-bck 2s cubic-bezier(0.645, 0.045, 0.355, 1) 1.8s alternate forwards;
-          animation: tracking-in-contract-bck 2s cubic-bezier(0.645, 0.045, 0.355, 1) 1.8s alternate forwards;
-  animation: tracking-in-contract-bck 2s cubic-bezier(0.645, 0.045, 0.355, 1) 1.8s alternate forwards;
+.text-animation {
+  -webkit-animation: text-animation 2s cubic-bezier(0.645, 0.045, 0.355, 1) 1.5s alternate forwards;
+          animation: text-animation 2s cubic-bezier(0.645, 0.045, 0.355, 1) 1.5s alternate forwards;
 }
 
-@-webkit-keyframes tracking-in-contract-bck {
+@-webkit-keyframes text-animation {
   0% {
     letter-spacing: 1em;
     -webkit-transform: translateZ(300px);
@@ -454,39 +453,7 @@ footer div :only-child {
   }
 }
 
-@keyframes tracking-in-contract-bck {
-  0% {
-    letter-spacing: 1em;
-    -webkit-transform: translateZ(300px);
-            transform: translateZ(300px);
-    transform: translateZ(300px);
-    opacity: 1;
-    z-index: 5;
-    position: fixed;
-    visibility: visible;
-  }
-  40% {
-    opacity: 0.9;
-  }
-  80% {
-    opacity: 0.7;
-    z-index: 5;
-  }
-  90% {
-    opacity: 0.5;
-    z-index: 5;
-  }
-  100% {
-    -webkit-transform: translateZ(0);
-            transform: translateZ(0);
-    transform: translateZ(0);
-    opacity: 0;
-    z-index: -1;
-    position: fixed;
-  }
-}
-
-@keyframes tracking-in-contract-bck {
+@keyframes text-animation {
   0% {
     letter-spacing: 1em;
     -webkit-transform: translateZ(300px);
@@ -519,7 +486,60 @@ footer div :only-child {
 }
 
 /*Animation "Loading"*/
-.load-bar {
+@-webkit-keyframes loading-animation {
+  0% {
+    -webkit-transform: scaleX(0.4);
+            transform: scaleX(0.4);
+    transform: scaleX(0.4);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    opacity: 1;
+    z-index: 2;
+    position: fixed;
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    opacity: 1;
+    z-index: 2;
+    position: fixed;
+    visibility: visible;
+  }
+}
+@keyframes loading-animation {
+  0% {
+    -webkit-transform: scaleX(0.4);
+            transform: scaleX(0.4);
+    transform: scaleX(0.4);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    opacity: 1;
+    z-index: 2;
+    position: fixed;
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    opacity: 1;
+    z-index: 2;
+    position: fixed;
+    visibility: visible;
+  }
+}
+
+.progress-bar {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -529,43 +549,43 @@ footer div :only-child {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  justify-items: center;
   position: fixed;
+  position: absolute;
+  top: 300px;
   width: 50%;
   height: 5px;
-  top: 400px;
-  margin: 30px;
-  border: hidden;
-  border-radius: 12px;
   visibility: hidden;
+  border-radius: 12px;
+  opacity: 1;
 }
 
-.load-bar__progress {
+@media all and (max-width: 1024px) {
+  .progress-bar {
+    top: 450px;
+  }
+}
+
+.progress-bar .loading-animation {
+  -webkit-animation: loading-animation 1s cubic-bezier(1, 0, 0, 1) forwards;
+          animation: loading-animation 1s cubic-bezier(1, 0, 0, 1) forwards;
   background: #99E2D0;
-  position: fixed;
+  border-radius: 12px;
 }
 
-.scale-in-hor-left {
-  -webkit-animation: scale-in-hor-left 1.2s cubic-bezier(0.86, 0, 0.07, 1) forwards;
-          animation: scale-in-hor-left 1.2s cubic-bezier(0.86, 0, 0.07, 1) forwards;
-  -webkit-animation: scale-in-hor-left 1.5s cubic-bezier(0.86, 0, 0.07, 1) forwards;
-          animation: scale-in-hor-left 1.5s cubic-bezier(0.86, 0, 0.07, 1) forwards;
-}
-
-@-webkit-keyframes scale-in-hor-left {
+@keyframes loading-animation {
   0% {
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
-    transform: scaleX(0);
+    -webkit-transform: scaleX(0.1);
+            transform: scaleX(0.1);
+    transform: scaleX(0.1);
     -webkit-transform-origin: 0% 0%;
             transform-origin: 0% 0%;
     transform-origin: 0% 0%;
     opacity: 1;
-    z-index: 4;
+    z-index: 2;
     position: fixed;
     visibility: visible;
   }
-  60% {
+  30% {
     -webkit-transform: scaleX(0.4);
             transform: scaleX(0.4);
     transform: scaleX(0.4);
@@ -573,8 +593,33 @@ footer div :only-child {
             transform-origin: 0% 0%;
     transform-origin: 0% 0%;
     opacity: 1;
-    z-index: 4;
+    z-index: 2;
     position: fixed;
+    visibility: visible;
+  }
+  65% {
+    -webkit-transform: scaleX(0.5);
+            transform: scaleX(0.5);
+    transform: scaleX(0.5);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    opacity: 1;
+    z-index: 2;
+    position: fixed;
+    visibility: visible;
+  }
+  99% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    transform-origin: 0% 0%;
+    opacity: 1;
+    z-index: 2;
+    position: fixed;
+    visibility: visible;
   }
   100% {
     -webkit-transform: scaleX(1);
@@ -583,83 +628,10 @@ footer div :only-child {
     -webkit-transform-origin: 0% 0%;
             transform-origin: 0% 0%;
     transform-origin: 0% 0%;
-    opacity: 1;
-    z-index: -6;
-    position: fixed;
-  }
-}
-
-@keyframes scale-in-hor-left {
-  0% {
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
-    transform: scaleX(0);
-    -webkit-transform-origin: 0% 0%;
-            transform-origin: 0% 0%;
-    transform-origin: 0% 0%;
-    opacity: 1;
-    z-index: 4;
+    opacity: 0;
+    z-index: 2;
     position: fixed;
     visibility: visible;
-  }
-  60% {
-    -webkit-transform: scaleX(0.4);
-            transform: scaleX(0.4);
-    transform: scaleX(0.4);
-    -webkit-transform-origin: 0% 0%;
-            transform-origin: 0% 0%;
-    transform-origin: 0% 0%;
-    opacity: 1;
-    z-index: 4;
-    position: fixed;
-  }
-  100% {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-    transform: scaleX(1);
-    -webkit-transform-origin: 0% 0%;
-            transform-origin: 0% 0%;
-    transform-origin: 0% 0%;
-    opacity: 1;
-    z-index: -6;
-    position: fixed;
-  }
-}
-
-@keyframes scale-in-hor-left {
-  0% {
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
-    transform: scaleX(0);
-    -webkit-transform-origin: 0% 0%;
-            transform-origin: 0% 0%;
-    transform-origin: 0% 0%;
-    opacity: 1;
-    z-index: 4;
-    position: fixed;
-    visibility: visible;
-  }
-  60% {
-    -webkit-transform: scaleX(0.4);
-            transform: scaleX(0.4);
-    transform: scaleX(0.4);
-    -webkit-transform-origin: 0% 0%;
-            transform-origin: 0% 0%;
-    transform-origin: 0% 0%;
-    opacity: 1;
-    z-index: 4;
-    position: fixed;
-  }
-  100% {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-    transform: scaleX(1);
-    -webkit-transform-origin: 0% 0%;
-            transform-origin: 0% 0%;
-    transform-origin: 0% 0%;
-    opacity: 1;
-    z-index: -6;
-    position: fixed;
   }
 }
 /*# sourceMappingURL=main.css.map */
