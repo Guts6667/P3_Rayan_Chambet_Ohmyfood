@@ -26,7 +26,7 @@ $primary-color: #9356DC;
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
 $linear-gradient: linear-gradient(to bottom right, $secondary-color, $primary-color);
-$linear-gradient-transition: linear-gradient(to top left, $secondary-color, rgba(158, 91, 155, 0.938));
+$linear-gradient-transition: linear-gradient(to top left, $secondary-color, rgba(228, 94, 217, 0.938));
 $linear-gradient-transition-dark: linear-gradient(to top left, $secondary-color, #462741);
 body{
     margin: 0;
@@ -181,11 +181,12 @@ a{
     font-family: 'Roboto';
 
         &:hover{
-            background: $linear-gradient-transition;
+            box-shadow: 0 0 9px 0 rgba(0,0,0,.7);
         }
         &:active{
 
-            background: $linear-gradient-transition-dark;
+            background: $linear-gradient-transition;
+            box-shadow: 0 0 11px 0 rgba(0,0,0,.7);
         }
     }
 
@@ -248,6 +249,12 @@ footer{
         flex-direction: row;
         align-items: center;
     }
+    @media all and (min-width:767px) {
+        nav :only-child{
+            display: flex;
+            justify-content: center;
+        }
+    }
 }
 /* Media Queries */
 
@@ -263,3 +270,7 @@ footer{
         width: 40%;
     }
 }
+/*Key frames*/
+
+ 
+  

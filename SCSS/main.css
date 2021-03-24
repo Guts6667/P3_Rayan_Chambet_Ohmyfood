@@ -246,13 +246,15 @@ a {
 }
 
 .btn:hover {
-  background: -webkit-gradient(linear, right bottom, left top, from(#FF79DA), to(rgba(158, 91, 155, 0.938)));
-  background: linear-gradient(to top left, #FF79DA, rgba(158, 91, 155, 0.938));
+  -webkit-box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.7);
+          box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.7);
 }
 
 .btn:active {
-  background: -webkit-gradient(linear, right bottom, left top, from(#FF79DA), to(#462741));
-  background: linear-gradient(to top left, #FF79DA, #462741);
+  background: -webkit-gradient(linear, right bottom, left top, from(#FF79DA), to(rgba(228, 94, 217, 0.938)));
+  background: linear-gradient(to top left, #FF79DA, rgba(228, 94, 217, 0.938));
+  -webkit-box-shadow: 0 0 11px 0 rgba(0, 0, 0, 0.7);
+          box-shadow: 0 0 11px 0 rgba(0, 0, 0, 0.7);
 }
 
 .position {
@@ -342,6 +344,17 @@ footer div :only-child {
           align-items: center;
 }
 
+@media all and (min-width: 767px) {
+  footer nav :only-child {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 /* Media Queries */
 @media all and (min-width: 1024px) {
   .container__restaurants {
@@ -360,4 +373,6 @@ footer div :only-child {
     width: 40%;
   }
 }
+
+/*Key frames*/
 /*# sourceMappingURL=main.css.map */
