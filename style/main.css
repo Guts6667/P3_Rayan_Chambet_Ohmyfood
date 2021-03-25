@@ -119,6 +119,31 @@ a {
       justify-content: space-around;
 }
 
+@media all and (min-width: 1024px) {
+  .container__restaurants {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    padding: 0 40px 0 40px;
+  }
+}
+
+.container__menu {
+  z-index: 1;
+  top: -150px;
+  background: #F6F6F6;
+  width: 100%;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  margin-top: 400px;
+}
+
 .box {
   background-color: #F6F6F6;
   border: hidden;
@@ -187,6 +212,12 @@ a {
   background-color: white;
 }
 
+@media all and (min-width: 1024px) {
+  .box__restaurants {
+    width: 40%;
+  }
+}
+
 .box__restaurants .box__picture {
   overflow: hidden;
   background-position: center;
@@ -194,6 +225,27 @@ a {
   width: 100%;
   height: 150px;
   border-radius: 12px 12px 0px 0;
+}
+
+.box__restaurants .box__promotion {
+  z-index: 0;
+  width: 70px;
+  position: absolute;
+  right: 120px;
+}
+
+@media all and (max-width: 767px) {
+  .box__restaurants .box__promotion {
+    right: 50px;
+  }
+}
+
+.box__restaurants .box__promotion p {
+  color: #458874;
+  font-family: 'Roboto';
+  font-weight: bold;
+  text-align: center;
+  background-color: #99e2d0;
 }
 
 .box__content {
@@ -212,7 +264,6 @@ a {
           align-items: center;
   margin: 0 30px 0 30px;
   line-height: 50%;
-  /*Grossir balise <i> Voir avec Fabio*/
 }
 
 .box__content h4, .box__content p {
@@ -225,13 +276,21 @@ a {
   font-size: 1.2em;
 }
 
-.box__content i {
-  font-size: 1.7em;
+.box__content .fa-heart {
+  font-size: 1.5em;
+  color: white;
+  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
 }
 
-.box__content i:active {
-  color: #9356DC;
-  fill: linear-gradient(to bottom right, #FF79DA, #9356DC);
+.box__content .fa-heart:hover {
+  text-shadow: none;
+  color: #FF79DA;
+}
+
+.box__content .fa-heart:active {
+  text-shadow: none;
+  color: #ff79da;
+  font-size: 1.8em;
 }
 
 .btn {
@@ -309,6 +368,37 @@ header {
   z-index: 1;
 }
 
+header:hover {
+  border-bottom: solid #9356DC;
+}
+
+header.page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header.page .arrow {
+  font-size: 1.5em;
+  margin: 0 10px 0 10px;
+}
+
+header.page .logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+  margin-right: 35px;
+}
+
 header img {
   width: 250px;
   margin: 10px;
@@ -359,23 +449,14 @@ footer div :only-child {
   }
 }
 
-/* Media Queries */
-@media all and (min-width: 1024px) {
-  .container__restaurants {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-flow: row wrap;
-            flex-flow: row wrap;
-    -ms-flex-pack: distribute;
-        justify-content: space-around;
-    padding: 0 40px 0 40px;
-  }
-  .box__restaurants {
-    width: 40%;
-  }
+/*Styles des pages annexes*/
+.bg-restaurant {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  width: 100%;
+  height: 750px;
 }
 
 /*Key frames*/
@@ -417,8 +498,8 @@ footer div :only-child {
 }
 
 .text-animation {
-  -webkit-animation: text-animation 2s cubic-bezier(0.645, 0.045, 0.355, 1) 1.5s alternate forwards;
-          animation: text-animation 2s cubic-bezier(0.645, 0.045, 0.355, 1) 1.5s alternate forwards;
+  -webkit-animation: text-animation 1.5s cubic-bezier(0.645, 0.045, 0.355, 1) 1.5s alternate forwards;
+          animation: text-animation 1.5s cubic-bezier(0.645, 0.045, 0.355, 1) 1.5s alternate forwards;
 }
 
 @-webkit-keyframes text-animation {
@@ -559,9 +640,9 @@ footer div :only-child {
   opacity: 1;
 }
 
-@media all and (max-width: 1024px) {
+@media all and (max-width: 767px) {
   .progress-bar {
-    top: 450px;
+    top: 150px;
   }
 }
 
@@ -632,6 +713,232 @@ footer div :only-child {
     z-index: 2;
     position: fixed;
     visibility: visible;
+  }
+}
+
+/*Animation Promotion*/
+.promotion-animation {
+  -webkit-animation: promotion-animation 10s ease-in-out infinite both;
+          animation: promotion-animation 10s ease-in-out infinite both;
+}
+
+@-webkit-keyframes promotion-animation {
+  0% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  13.9% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  14% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  14.9% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  15% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  22.9% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  23% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  24.9% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  25% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  34.9% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  35% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  40% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35);
+  }
+  42.9% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35);
+  }
+  43% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  44.9% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  45% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  54.9% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  55% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  69.5% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  69.9% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  70% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  79.4% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  79.9% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+  }
+  89.8% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  89.9% {
+    opacity: 1;
+    text-shadow: none;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes promotion-animation {
+  0% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  13.9% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  14% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  14.9% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  15% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  22.9% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  23% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  24.9% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  25% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  34.9% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  35% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  40% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35);
+  }
+  42.9% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35);
+  }
+  43% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  44.9% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  45% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  54.9% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  55% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  69.5% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  69.9% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  70% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  79.4% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  79.9% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+  }
+  89.8% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  89.9% {
+    opacity: 1;
+    text-shadow: none;
+  }
+  100% {
+    opacity: 0;
   }
 }
 /*# sourceMappingURL=main.css.map */

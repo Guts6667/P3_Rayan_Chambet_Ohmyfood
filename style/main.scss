@@ -25,13 +25,17 @@
 $primary-color: #9356DC;
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
+$bg-color: #F6F6F6;
 $linear-gradient: linear-gradient(to bottom right, $secondary-color, $primary-color);
 $linear-gradient-transition: linear-gradient(to top left, $secondary-color, rgba(228, 94, 217, 0.938));
 $linear-gradient-transition-dark: linear-gradient(to top left, $secondary-color, #462741);
+
+
 body{
     margin: 0;
 
 }
+
 h4, h5, h6{
     font-family: 'Roboto';
 }
@@ -70,7 +74,7 @@ a{
             flex-direction: column;
             justify-content: center;
             text-align: center;
-            background-color: #F6F6F6;
+            background-color: $bg-color;
             p{
                 font-weight: bold;
             }
@@ -86,13 +90,29 @@ a{
             display: flex;
             flex-flow: row wrap;
             justify-content: space-around;
+
+                @media all and (min-width: 1024px){
+                    display: flex;
+                    flex-flow: row wrap;
+                    justify-content: space-around;
+                    padding: 0 40px 0 40px;
+                } 
+        }
+        &__menu{
+          z-index: 1;
+          top: -150px;
+          background: $bg-color;
+          width: 100%;
+          border-top-left-radius: 12px;
+          border-top-right-radius: 12px;
+          margin-top: 400px;
         }
         
 }
 
 
 .box{
-    background-color: #F6F6F6;
+    background-color: $bg-color;
     border: hidden;
     border-radius: 12px;
     box-shadow: 0 0 7px 0 rgba(0,0,0,.2);
@@ -137,6 +157,11 @@ a{
     &__restaurants{
         background-color: white;
     
+            @media all and (min-width:1024px){
+
+                    width: 40%;
+                
+            }
             .box__picture{
                 overflow: hidden;
                 background-position: center;
@@ -144,6 +169,26 @@ a{
                 width: 100%;
                 height: 150px;
                 border-radius: 12px 12px 0px 0;
+            }
+            .box__promotion{
+                z-index: 0;
+                width: 70px;
+                position: absolute;
+                right: 120px;
+                @media all and (max-width: 767px) {
+                    right: 50px;
+                }
+                
+                
+                
+                    p{
+                        color: #458874;
+                        font-family: 'Roboto';
+                        font-weight: bold;
+                        text-align: center;
+                        background-color: rgba($color: $tertiary-color, $alpha: 1.5);
+                        
+                    }
             }
 
     }
@@ -161,17 +206,28 @@ a{
         p{
             font-family: Roboto;
             font-size: 1.2em;
+            
+                
         }
-        i{
-            font-size: 1.7em;
-        }
-        i:active{
-            color: $primary-color;
-            fill: $linear-gradient;
+        
+        .fa-heart{
+            font-size: 1.5em;
+            color: white;
+            text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
 
+            &:hover{
+                text-shadow: none;
+                color: $secondary-color;
+
+                
+            }
+                &:active{
+                    text-shadow: none;
+                    color:rgba($secondary-color, $alpha: 1.5);
+                    font-size: 1.8em;
+                }
         }
-       /*Grossir balise <i> Voir avec Fabio*/
-       
+              
         
     }
 }
@@ -230,7 +286,27 @@ a{
     background-color: white;
     z-index: 1;
 
-        
+        &:hover{
+            border-bottom: solid $primary-color;
+        }
+       &.page{
+         display: flex;
+         align-items: center;
+          
+         
+          .arrow{
+              font-size: 1.5em;
+              margin: 0 10px 0 10px;
+          }
+            .logo{
+                display: flex;
+                justify-content: center;
+                flex-grow: 2;
+                margin-right: 35px;
+                
+          }
+       } 
+       
 }
 header img{
     width: 250px;
@@ -264,20 +340,18 @@ footer{
         }
     }
 }
-/* Media Queries */
-
-@media all and (min-width:1024px){
-
-    .container__restaurants{
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: space-around;
-        padding: 0 40px 0 40px;
-    }
-    .box__restaurants{
-        width: 40%;
-    }
+/*Styles des pages annexes*/
+.bg-restaurant{
+  background-position:center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  width: 100%;
+  height: 750px;
+    
 }
+
+
 /*Key frames*/
 
 /*Animation "OH MY FOOD"*/
@@ -305,7 +379,7 @@ footer{
  }
 
  .text-animation {
-	animation: text-animation 2s cubic-bezier(0.645, 0.045, 0.355, 1.000) 1.5s alternate forwards;
+	animation: text-animation 1.5s cubic-bezier(0.645, 0.045, 0.355, 1.000) 1.5s alternate forwards;
 }
 
 @keyframes text-animation {
@@ -374,8 +448,8 @@ footer{
      visibility: hidden;
      border-radius: 12px;
      opacity: 1;
-     @media all and (max-width: 1024px) {
-         top: 450px;
+     @media all and (max-width: 767px) {
+         top: 150px;
      }
      
         .loading-animation {
@@ -441,3 +515,122 @@ footer{
     
   }
   
+  /*Animation Promotion*/
+
+  .promotion-animation {
+	        animation: promotion-animation 10s ease-in-out infinite both;
+}
+
+@keyframes promotion-animation {
+    0% {
+      opacity: 1;
+      text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+    }
+    13.9% {
+      opacity: 1;
+      text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+    }
+    14% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    14.9% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    15% {
+      opacity: 1;
+      text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1);
+    }
+    22.9% {
+      opacity: 1;
+      text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1);
+    }
+    23% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    24.9% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    25% {
+      opacity: 1;
+      text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+    }
+    34.9% {
+      opacity: 1;
+      text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+    }
+    35% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    
+    40% {
+      opacity: 1;
+      text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35);
+    }
+    42.9% {
+      opacity: 1;
+      text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35);
+    }
+    43% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    44.9% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    45% {
+      opacity: 1;
+      text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+    }
+    50% {
+      opacity: 1;
+      text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+    }
+    54.9% {
+      opacity: 1;
+      text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+    }
+    55% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    
+    69.5% {
+      opacity: 1;
+      text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+    }
+    69.9% {
+      opacity: 1;
+      text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+    }
+    70% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    79.4% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    79.9% {
+      opacity: 1;
+      text-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+    }
+    
+    89.8% {
+      opacity: 0;
+      text-shadow: none;
+    }
+    89.9% {
+      opacity: 1;
+      text-shadow: none;
+    }
+   
+    100% {
+      opacity: 0;
+    }
+  }
