@@ -90,6 +90,7 @@ a{
             display: flex;
             flex-flow: row wrap;
             justify-content: space-around;
+            margin-bottom: 30px;
 
                 @media all and (min-width: 1024px){
                     display: flex;
@@ -99,14 +100,15 @@ a{
                 } 
         }
         &__menu{
-          z-index: 1;
-          top: -150px;
+          z-index: 0;
           background: $bg-color;
           width: 100%;
-          border-top-left-radius: 12px;
-          border-top-right-radius: 12px;
+          border-top-left-radius: 60px;
+          border-top-right-radius: 60px;
           margin-top: 400px;
+          padding-bottom: 30px;
         }
+        
         
 }
 
@@ -205,34 +207,65 @@ a{
         }
         p{
             font-family: Roboto;
-            font-size: 1.2em;
+            font-size: 1.2em;    
+                
+        }  
+    }
+
+    &__option{
+      width: 80%;
+      padding: 0 0px 0 10px;
+      line-height: 40%;
+      background-color: white;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
             
-                
-        }
-        
-        .fa-heart{
-            font-size: 1.5em;
-            color: white;
-            text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+              h4{
+                font-size: 1em;
+              }
 
-            &:hover{
-                text-shadow: none;
-                color: $secondary-color;
-
-                
-            }
-                &:active{
-                    text-shadow: none;
-                    color:rgba($secondary-color, $alpha: 1.5);
-                    font-size: 1.8em;
-                }
-        }
+              strong{
+                font-family: 'Roboto';
+                margin-right: 20px;
+              }  
               
-        
+              .animation-choice{
+                display: none;
+
+              }
+              & :hover ~ .animation-choice{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: $tertiary-color;
+                width: 70px;
+                border-top-right-radius: 12px;
+                border-bottom-right-radius: 12px;
+                box-shadow: $tertiary-color 0 0 0 1px;
+                font-size: 1.7em;
+                color: white;
+                animation: scale-up-hor-right 0.3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+
+                  .fa-check-circle{
+                    animation: rotate-in-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                  }
+              }    
+              .price{
+                position: relative;
+                bottom: -30px;
+              } 
     }
 }
 
 
+.underline{
+  width: 50px;
+  height: 2px;
+  background-color: $tertiary-color;
+  position: relative;
+  top: -15px;
+}
 .btn{
     color: white;
     border: hidden;
@@ -276,6 +309,29 @@ a{
      }
  }
 
+
+ .menu-title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 40px ;
+
+      &__restaurant_name{
+        margin-right: 60px;
+        font-size: 1.1em;
+
+            h2{
+              font-family: 'Shrikhand';
+         }
+      }
+      
+      i{
+        font-size: 1.5em;
+      }       
+}
+
+
  /*Balises Sémantiques*/
  header{
     display: flex;
@@ -314,8 +370,8 @@ header img{
 }
 footer{
     background-color: #353535;
-    margin-top: 30px;
     padding: 10px 20px 20px 40px;
+    z-index: 0;
     h3{
         font-family: Shrikhand;
         color: white;
@@ -347,12 +403,13 @@ footer{
   background-repeat: no-repeat;
   background-attachment: scroll;
   width: 100%;
-  height: 750px;
+  height: 500px;
     
 }
 
 
-/*Key frames*/
+/*Animation & Transitions*/
+
 
 /*Animation "OH MY FOOD"*/
  .anim{
@@ -634,3 +691,52 @@ footer{
       opacity: 0;
     }
   }
+
+  /*Transition logo heart*/
+.heart-style{
+  font-size: 1.5em;
+  color: white;
+  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+
+  &:hover{
+      text-shadow: none;
+      color: $secondary-color;
+
+      
+  }
+      &:active{
+          text-shadow: none;
+          color:rgba($secondary-color, $alpha: 1.5);
+          font-size: 1.8em;
+      }
+}
+
+/*Animation add to checked*/
+@keyframes rotate-in-center {
+  0% {
+    -webkit-transform: rotate(-360deg);
+            transform: rotate(-360deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scale-up-hor-right {
+  0% {
+    -webkit-transform: scaleX(0.4);
+            transform: scaleX(0.4);
+    -webkit-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+  }
+}
+

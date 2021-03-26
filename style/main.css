@@ -117,6 +117,7 @@ a {
           flex-flow: row wrap;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  margin-bottom: 30px;
 }
 
 @media all and (min-width: 1024px) {
@@ -135,13 +136,13 @@ a {
 }
 
 .container__menu {
-  z-index: 1;
-  top: -150px;
+  z-index: 0;
   background: #F6F6F6;
   width: 100%;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
   margin-top: 400px;
+  padding-bottom: 30px;
 }
 
 .box {
@@ -276,21 +277,74 @@ a {
   font-size: 1.2em;
 }
 
-.box__content .fa-heart {
-  font-size: 1.5em;
+.box__option {
+  width: 80%;
+  padding: 0 0px 0 10px;
+  line-height: 40%;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.box__option h4 {
+  font-size: 1em;
+}
+
+.box__option strong {
+  font-family: 'Roboto';
+  margin-right: 20px;
+}
+
+.box__option .animation-choice {
+  display: none;
+}
+
+.box__option :hover ~ .animation-choice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #99E2D0;
+  width: 70px;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+  -webkit-box-shadow: #99E2D0 0 0 0 1px;
+          box-shadow: #99E2D0 0 0 0 1px;
+  font-size: 1.7em;
   color: white;
-  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+  -webkit-animation: scale-up-hor-right 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+          animation: scale-up-hor-right 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 
-.box__content .fa-heart:hover {
-  text-shadow: none;
-  color: #FF79DA;
+.box__option :hover ~ .animation-choice .fa-check-circle {
+  -webkit-animation: rotate-in-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+          animation: rotate-in-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
-.box__content .fa-heart:active {
-  text-shadow: none;
-  color: #ff79da;
-  font-size: 1.8em;
+.box__option .price {
+  position: relative;
+  bottom: -30px;
+}
+
+.underline {
+  width: 50px;
+  height: 2px;
+  background-color: #99E2D0;
+  position: relative;
+  top: -15px;
 }
 
 .btn {
@@ -353,6 +407,36 @@ a {
   }
 }
 
+.menu-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 50px 0 40px;
+}
+
+.menu-title__restaurant_name {
+  margin-right: 60px;
+  font-size: 1.1em;
+}
+
+.menu-title__restaurant_name h2 {
+  font-family: 'Shrikhand';
+}
+
+.menu-title i {
+  font-size: 1.5em;
+}
+
 /*Balises Sémantiques*/
 header {
   display: -webkit-box;
@@ -406,8 +490,8 @@ header img {
 
 footer {
   background-color: #353535;
-  margin-top: 30px;
   padding: 10px 20px 20px 40px;
+  z-index: 0;
 }
 
 footer h3 {
@@ -456,10 +540,10 @@ footer div :only-child {
   background-repeat: no-repeat;
   background-attachment: scroll;
   width: 100%;
-  height: 750px;
+  height: 500px;
 }
 
-/*Key frames*/
+/*Animation & Transitions*/
 /*Animation "OH MY FOOD"*/
 .anim {
   display: -webkit-box;
@@ -939,6 +1023,80 @@ footer div :only-child {
   }
   100% {
     opacity: 0;
+  }
+}
+
+/*Transition logo heart*/
+.heart-style {
+  font-size: 1.5em;
+  color: white;
+  text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
+}
+
+.heart-style:hover {
+  text-shadow: none;
+  color: #FF79DA;
+}
+
+.heart-style:active {
+  text-shadow: none;
+  color: #ff79da;
+  font-size: 1.8em;
+}
+
+/*Animation add to checked*/
+@-webkit-keyframes rotate-in-center {
+  0% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+@keyframes rotate-in-center {
+  0% {
+    -webkit-transform: rotate(-360deg);
+    transform: rotate(-360deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes scale-up-hor-right {
+  0% {
+    -webkit-transform: scaleX(0.4);
+    transform: scaleX(0.4);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+  }
+}
+
+@keyframes scale-up-hor-right {
+  0% {
+    -webkit-transform: scaleX(0.4);
+    transform: scaleX(0.4);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
   }
 }
 /*# sourceMappingURL=main.css.map */
