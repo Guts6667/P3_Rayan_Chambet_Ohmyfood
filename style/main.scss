@@ -106,12 +106,10 @@ a{
           border-top-right-radius: 60px;
           padding-bottom: 30px;
           margin-top: -100px;
-          animation: slide-top-menu 1s ease-in-out 0.5s both;
+          animation: slide-top-menu 1s ease-in-out 0.5s both;  
           
-          
-        }
-        
-        
+        }   
+
 }
 
 
@@ -414,14 +412,19 @@ footer{
 
 
 /*Animation & Transitions*/
+
 /*Loading spinner animation*/
 
 .lds-roller {
-  display: inline-block;
-  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
   width: 80px;
   height: 80px;
-  top: 300px;
+  padding-right: 80px;
+  z-index: -5;
+  
 }
 .lds-roller div {
   animation: lds-roller .9s ease-in-out 2 forwards;
@@ -505,10 +508,39 @@ footer{
   0% {
     transform: rotate(0deg);
     opacity: 1;
+    z-index: 100;
   }
   100% {
     transform: rotate(360deg);
     opacity: 0;
+    z-index: -5;
+  }
+}
+/*Background animation*/
+.color-change {
+  width: 100%;
+  height: 100%;
+  top: 0;
+	animation: color-change 1s ease-in-out 1 forwards;
+}
+@keyframes color-change {
+  0% {
+    background:white;
+    opacity: 1;
+    z-index: 101;
+  }
+  30%{
+    background-color: white;
+    opacity: .9;
+  }
+  65%{
+    background-color: white;
+    opacity: .9;
+  }
+  100% {
+    background: white;
+    opacity: 0;
+    z-index: -5;
   }
 }
 /*Animation "OH MY FOOD"*/
@@ -516,12 +548,13 @@ footer{
      display: flex;
      justify-content: center;
      align-items: center;
-     position: absolute;
+     position: fixed;
      top: 0;
      z-index: -1;
      width: 100%;
      height: 100%;
      visibility: hidden;
+     opacity: .5;
         h1{
             font-family: 'Shrikhand';
             text-shadow: 4px 4px 0px $tertiary-color;
@@ -700,13 +733,14 @@ footer{
   &:hover{
       text-shadow: none;
       color: $secondary-color;
-      animation: text-blur-out 0.3s cubic-bezier(0.455, 0.030, 0.515, 0.955) reverse both;
       
   }
       &:active{
           text-shadow: none;
           color:rgba($secondary-color, $alpha: 1.5);
           font-size: 1.8em;
+
+      animation: text-blur-out 0.3s cubic-bezier(0.455, 0.030, 0.515, 0.955) reverse both;
       }
 }
 
@@ -775,4 +809,5 @@ footer{
 
   }
 }
+
 
