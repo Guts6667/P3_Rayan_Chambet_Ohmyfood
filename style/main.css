@@ -358,8 +358,8 @@ a {
           box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.5);
   background: -webkit-gradient(linear, left top, right bottom, from(#FF79DA), to(#9356DC));
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
-  -webkit-transition: background-color opacity 1s ease-in-out;
-  transition: background-color opacity 1s ease-in-out;
+  -webkit-transition: background-color 1s ease-in-out;
+  transition: background-color 1s ease-in-out;
   padding: 20px 25px 20px 25px;
   margin-top: 10px;
   font-family: 'Roboto';
