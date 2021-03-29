@@ -244,6 +244,7 @@ a {
 }
 
 .box__restaurants .box__picture {
+  position: relative;
   overflow: hidden;
   background-position: center;
   background-size: cover;
@@ -256,7 +257,7 @@ a {
   z-index: 0;
   width: 70px;
   position: absolute;
-  right: 120px;
+  right: 10px;
 }
 
 @media all and (max-width: 767px) {
@@ -304,15 +305,15 @@ a {
 .box__option {
   width: 90%;
   padding: 0 0px 0 10px;
-  line-height: 40%;
+  line-height: 85%;
   background-color: white;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
+      -ms-flex-flow: row;
+          flex-flow: row;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -362,7 +363,7 @@ a {
 
 .box__option .price {
   position: relative;
-  bottom: -30px;
+  top: 40px;
 }
 
 .underline {

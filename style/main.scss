@@ -180,6 +180,7 @@ a{
                 
             }
             .box__picture{
+              position: relative;
                 overflow: hidden;
                 background-position: center;
                 background-size: cover;
@@ -191,7 +192,7 @@ a{
                 z-index: 0;
                 width: 70px;
                 position: absolute;
-                right: 120px;
+                right: 10px;
                 @media all and (max-width: 767px) {
                     right: 50px;
                 }
@@ -230,12 +231,13 @@ a{
     &__option{
       width: 90%;
       padding: 0 0px 0 10px;
-      line-height: 40%;
+      line-height: 85%;
       background-color: white;
       display: flex;
-      flex-flow: row wrap;
+      flex-flow: row;
       justify-content: space-between;
       animation: slide-top 1s ease-in-out 0.5s both;
+
             
               h4{
                 font-size: 1em;
@@ -270,8 +272,8 @@ a{
               }    
               .price{
                 position: relative;
-                bottom: -30px;
-              } 
+                top: 40px;
+              }
     }
 }
 
