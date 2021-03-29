@@ -108,6 +108,20 @@ a{
           margin-top: -100px;
           animation: slide-top-menu 1s ease-in-out 0.5s both;  
           
+        }
+        &__btn-command{
+          margin-top: 30px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+            
+            button{
+              width: 200px;
+              border: none;
+              outline: none;
+              font-size: 1.1em;
+              
+            }
         }   
 
 }
@@ -286,8 +300,8 @@ a{
         &:active{
 
             background: $linear-gradient-transition;
-            box-shadow: 0 0 11px 0 rgba(0,0,0,.7);
-        }
+            box-shadow: 0 0 11px 0 rgba(0,0,0,.7);          
+        }     
     }
 
 
