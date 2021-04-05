@@ -741,24 +741,34 @@ footer{
   }
 
   /*Transition logo heart*/
-.heart-style{
+/*Transition logo heart*/
+heart {
+  position: relative;
+  cursor: pointer;
+}
+
+.heart:hover i:last-child {
+  opacity: 0;
+}
+
+.heart i:first-child {
   font-size: 1.5em;
+  background: -webkit-gradient(linear, right bottom, left top, from($primary-color), to($secondary-color));
+  background: linear-gradient(to top left, $primary-color, $secondary-color);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+}
+
+.heart i:last-child {
+  font-size: 1.5em;
+  position: absolute;
   color: white;
   text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
-
-  &:hover{
-      text-shadow: none;
-      color: $secondary-color;
-      
-  }
-      &:active{
-          text-shadow: none;
-          color:rgba($secondary-color, $alpha: 1.5);
-          font-size: 1.8em;
-
-      animation: text-blur-out 0.3s cubic-bezier(0.455, 0.030, 0.515, 0.955) reverse both;
-      }
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
 }
+
 
 @keyframes text-blur-out {
   0% {
@@ -768,7 +778,6 @@ footer{
             filter: blur(12px) opacity(0%);
   }
 }
-
 
 
 /*Animation add to checked*/

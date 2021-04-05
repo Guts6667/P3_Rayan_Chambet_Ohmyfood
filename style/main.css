@@ -1110,22 +1110,32 @@ footer div :only-child {
 }
 
 /*Transition logo heart*/
-.heart-style {
+/*Transition logo heart*/
+heart {
+  position: relative;
+  cursor: pointer;
+}
+
+.heart:hover i:last-child {
+  opacity: 0;
+}
+
+.heart i:first-child {
   font-size: 1.5em;
+  background: -webkit-gradient(linear, right bottom, left top, from(#9356DC), to(#FF79DA));
+  background: linear-gradient(to top left, #9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: absolute;
+}
+
+.heart i:last-child {
+  font-size: 1.5em;
+  position: absolute;
   color: white;
   text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000;
-}
-
-.heart-style:hover {
-  text-shadow: none;
-  color: #FF79DA;
-}
-
-.heart-style:active {
-  text-shadow: none;
-  color: #ff79da;
-  font-size: 1.8em;
-  animation: text-blur-out 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955) reverse both;
+  -webkit-transition-duration: 250ms;
+  transition-duration: 250ms;
 }
 
 @-webkit-keyframes text-blur-out {
