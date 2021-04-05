@@ -753,7 +753,7 @@ heart {
 
 .heart i:first-child {
   font-size: 1.5em;
-  background: -webkit-gradient(linear, right bottom, left top, from($primary-color), to(&$secondary-color));
+  background: -webkit-gradient(linear, right bottom, left top, from($primary-color), to($secondary-color));
   background: linear-gradient(to top left, $primary-color, $secondary-color);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
