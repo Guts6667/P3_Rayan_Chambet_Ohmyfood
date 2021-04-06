@@ -742,9 +742,10 @@ footer{
 
   /*Transition logo heart*/
 /*Transition logo heart*/
-heart {
+.heart {
   position: relative;
   cursor: pointer;
+  left: -30px;
 }
 
 .heart:hover i:last-child {
