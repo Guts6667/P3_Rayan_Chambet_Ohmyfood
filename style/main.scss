@@ -237,8 +237,11 @@ a{
       flex-flow: row;
       justify-content: space-between;
       animation: slide-top 1s ease-in-out 0.5s both;
-
-            
+      
+      .meal{
+        flex-grow: 2;
+        
+      }     
               h4{
                 font-size: 1em;
               }
@@ -253,7 +256,7 @@ a{
 
               }
 
-              & :hover ~ .animation-choice{
+              & :hover ~ .animation-choice {
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -268,11 +271,15 @@ a{
 
                   .fa-check-circle{
                     animation: rotate-in-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+                    pointer-events: none;
                   }
               }    
+
+              & :hover ~ .slide-left {
+                animation: slide-left 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+      }
               .price{
-                position: relative;
-                top: 40px;
+                padding-top: 20px;
               }
     }
 }
@@ -298,6 +305,7 @@ a{
 
         &:hover{
             box-shadow: 0 0 9px 0 rgba(0,0,0,.7);
+            
         }
         &:active{
 
@@ -836,4 +844,13 @@ footer{
   }
 }
 
+
+@keyframes slide-left {
+  0% {
+            transform: translateX(0);
+  }
+  100% {
+            transform: translateX(-20px);
+  }
+}
 

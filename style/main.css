@@ -321,6 +321,12 @@ a {
           animation: slide-top 1s ease-in-out 0.5s both;
 }
 
+.box__option .meal {
+  -webkit-box-flex: 2;
+      -ms-flex-positive: 2;
+          flex-grow: 2;
+}
+
 .box__option h4 {
   font-size: 1em;
 }
@@ -359,11 +365,16 @@ a {
 .box__option :hover ~ .animation-choice .fa-check-circle {
   -webkit-animation: rotate-in-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
           animation: rotate-in-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  pointer-events: none;
+}
+
+.box__option :hover ~ .slide-left {
+  -webkit-animation: slide-left 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+          animation: slide-left 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .box__option .price {
-  position: relative;
-  top: 40px;
+  padding-top: 20px;
 }
 
 .underline {
@@ -1280,6 +1291,28 @@ footer div :only-child {
   100% {
     -webkit-transform: translateY(0);
             transform: translateY(0);
+  }
+}
+
+@-webkit-keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
   }
 }
 /*# sourceMappingURL=main.css.map */
