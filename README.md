@@ -5,7 +5,7 @@ Ohmyfood is a non functionnal but navigable app for a fictional food delivery pl
 
 The purpose was to practice HTML/CSS/SCSS and create my firsts animations
 
-Check the website here 🌍: https://guts6667.github.io/P3_Rayan_Chambet_Ohmyfood/pages/page1.html
+Check the website here 🌍: https://ohmyf-cf02d.web.app/index.html
 
 <img width="900" alt="Capture d’écran 2021-09-03 à 04 00 12" src="https://user-images.githubusercontent.com/76847062/131939369-9ab9e13b-a1c5-41d5-9ec3-0098cdecc378.png">
 <img width="900" alt="Capture d’écran 2021-09-03 à 04 00 19" src="https://user-images.githubusercontent.com/76847062/131939373-661fcc2e-a06d-434b-9737-1f76c643a114.png">
